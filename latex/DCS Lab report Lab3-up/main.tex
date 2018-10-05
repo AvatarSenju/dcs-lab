@@ -1,0 +1,83 @@
+%  $Description: DCS Lab Report for Lab1
+%  $Author: Anushrut $
+%  $Date: 02-09-2018  $
+%  $Revision: 1.0 $
+
+\documentclass[11pt]{book}
+\usepackage{DCSLab}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{algorithm2e}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage{blindtext}
+\usepackage[section]{placeins}
+\graphicspath{{Figures/}{./}} % To include images in other directories
+%\usepackage{setspace}
+
+\long\def\symbolfootnote[#1]#2{\begingroup%
+\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
+\renewcommand{\baselinestretch}{1.2}
+\onecolumn
+%--------------------------------------------------------
+
+\begin{document}
+\pagenumbering{roman}
+
+%%Cover Page
+ 
+
+%% TITLE PAGE
+ \input{titlePage.tex}
+
+
+%% COPYRIGHT PAGE
+\newpage
+ \thispagestyle{empty}
+\renewcommand{\thesisdedication}{{\large Copyright \copyright~~ The LNMIIT 2018\\}{\large All Rights Reserved\\}}
+\thesisdedicationpage
+
+
+%--------------------------------------------------------
+\tableofcontents
+%\listoffigures
+%\listoftables
+
+%----------------------------------------------------
+\chapter{Experiment - 2}
+\label{ch:ex2}
+\input{Exp2.tex}
+
+% \chapter{Experiment - 2}
+% \label{ch:ex2}
+% \input{Exp2.tex}
+
+% \chapter{Experiment - 3}
+% \label{ch:ex3}
+% \input{Exp3.tex}
+
+% \chapter{Experiment - 4}
+% \label{ch:ex4}
+% \input{Exp4.tex}
+
+
+
+
+%--------------------------------------------------------
+
+%--------------------------------------------------------
+%%% Optional appendix
+%\appendix
+%\chapter{}
+%\label{}
+
+%--------------------------------------------------------
+% Recommended 'Related Publication'
+%--------------------------------------------------------
+
+\end{document}
