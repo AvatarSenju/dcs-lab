@@ -1,0 +1,56 @@
+USER SYMBOL by DSCH 3.5
+DATE 11/16/2018 3:29:53 PM
+SYM  #mux_4_1
+BB(0,0,40,70)
+TITLE 10 -7  #mux_4_1
+MODEL 6000
+REC(5,5,30,60)
+PIN(0,50,0.00,0.00)s1
+PIN(0,60,0.00,0.00)s0
+PIN(0,10,0.00,0.00)x3
+PIN(0,20,0.00,0.00)x2
+PIN(0,30,0.00,0.00)x1
+PIN(0,40,0.00,0.00)x0
+PIN(40,10,2.00,1.00)out3
+LIG(0,50,5,50)
+LIG(0,60,5,60)
+LIG(0,10,5,10)
+LIG(0,20,5,20)
+LIG(0,30,5,30)
+LIG(0,40,5,40)
+LIG(35,10,40,10)
+LIG(5,5,5,65)
+LIG(5,5,35,5)
+LIG(35,5,35,65)
+LIG(35,65,5,65)
+VLG module mux_4_1( s1,s0,x3,x2,x1,x0,out3);
+VLG  input s1,s0,x3,x2,x1,x0;
+VLG  output out3;
+VLG  wire w5,w8,w11,w12,w13,w14,w15,w16;
+VLG  wire w17,w18,w19;
+VLG  mux #(3) mux_2_1_1(w5,x0,s0,x1);
+VLG  mux #(3) mux_2_1_2(out3,w5,s1,w8);
+VLG  mux #(3) mux_2_1_3(w8,x2,s0,x3);
+VLG  not #(1) inv_1_4(w11,s0);
+VLG  not #(1) not1_2_5(w12,s0);
+VLG  nmos #(2) nmos1_3_6(w5,x1,s0); //  
+VLG  pmos #(2) pmos1_4_7(w5,x1,w12); //  
+VLG  not #(1) not1_5_8(w13,w11);
+VLG  nmos #(2) nmos1_6_9(w5,x0,w11); //  
+VLG  pmos #(2) pmos1_7_10(w5,x0,w13); //  
+VLG  not #(1) inv_1_11(w14,s1);
+VLG  not #(1) not1_2_12(w15,s1);
+VLG  nmos #(2) nmos1_3_13(out3,w8,s1); //  
+VLG  pmos #(2) pmos1_4_14(out3,w8,w15); //  
+VLG  not #(1) not1_5_15(w16,w14);
+VLG  nmos #(2) nmos1_6_16(out3,w5,w14); //  
+VLG  pmos #(2) pmos1_7_17(out3,w5,w16); //  
+VLG  not #(1) inv_1_18(w17,s0);
+VLG  not #(1) not1_2_19(w18,s0);
+VLG  nmos #(2) nmos1_3_20(w8,x3,s0); //  
+VLG  pmos #(2) pmos1_4_21(w8,x3,w18); //  
+VLG  not #(1) not1_5_22(w19,w17);
+VLG  nmos #(2) nmos1_6_23(w8,x2,w17); //  
+VLG  pmos #(2) pmos1_7_24(w8,x2,w19); //  
+VLG endmodule
+FSYM

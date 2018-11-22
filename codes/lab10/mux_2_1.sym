@@ -1,0 +1,32 @@
+USER SYMBOL by DSCH 3.5
+DATE 11/16/2018 3:23:30 PM
+SYM  #mux_2_1
+BB(0,0,40,40)
+TITLE 10 -7  #mux_2_1
+MODEL 6000
+REC(5,5,30,30)
+PIN(0,20,0.00,0.00)B
+PIN(0,10,0.00,0.00)enable
+PIN(0,30,0.00,0.00)A
+PIN(40,10,2.00,1.00)out1
+LIG(0,20,5,20)
+LIG(0,10,5,10)
+LIG(0,30,5,30)
+LIG(35,10,40,10)
+LIG(5,5,5,35)
+LIG(5,5,35,5)
+LIG(35,5,35,35)
+LIG(35,35,5,35)
+VLG module mux_2_1( B,enable,A,out1);
+VLG  input B,enable,A;
+VLG  output out1;
+VLG  wire w6,w7,w8;
+VLG  not #(1) inv_1(w6,enable);
+VLG  not #(1) not1_2(w7,enable);
+VLG  nmos #(2) nmos1_3(out1,A,enable); //  
+VLG  pmos #(2) pmos1_4(out1,A,w7); //  
+VLG  not #(1) not1_5(w8,w6);
+VLG  nmos #(2) nmos1_6(out1,B,w6); //  
+VLG  pmos #(2) pmos1_7(out1,B,w8); //  
+VLG endmodule
+FSYM
